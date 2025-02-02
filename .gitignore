@@ -1,1 +1,10 @@
+*.aux
+*.log
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+*.out
+thesis.pdf
 phd-thesis-template/
+*.DS_store
