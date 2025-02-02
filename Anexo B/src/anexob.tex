@@ -1,0 +1,34 @@
+\documentclass[a4paper,12pt,times,numbered,print,index]{PhDThesisPSnPDF}
+\input{anexob-info}
+
+\begin{document}
+
+\frontmatter
+\maketitle
+
+% ********************************** Main Matter ******************************
+\mainmatter
+
+% Including all of the Body files
+\input{Body/Introduction/introduction}
+\input{Body/Literature_Review/literature_review}
+\input{Body/Motivation/motivation}
+\input{Body/Project_Objectives/project_objectives}
+\input{Body/SDGS/sdgs}
+\input{Body/Methodology/methodology}
+\input{Body/Work_Schedule/work_schedule}
+\input{Body/Resources/resources}
+\input{Body/Final_Considerations/final_considerations}
+
+% ********************************** Bibliography ****************************
+\begin{spacing}{0.9}
+\bibliographystyle{apalike}
+%\bibliographystyle{unsrt}  % Alternative: unsorted references
+%\bibliographystyle{plainnat}  % Alternative: URLs in references
+\cleardoublepage
+\bibliography{References/references}  % Ensure this file exists!
+\end{spacing}
+
+
+
+\end{document}
