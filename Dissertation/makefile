@@ -2,11 +2,22 @@ BUILD_DIR = build
 SRC_DIR = src
 
 # List of files to copy
-FILES_TO_COPY = $(SRC_DIR)/thesis.tex $(SRC_DIR)/thesis-info.tex $(SRC_DIR)/phd-thesis-template/PhDThesisPSnPDF.cls
-DIRS_TO_COPY = $(SRC_DIR)/Figs $(SRC_DIR)/Body $(SRC_DIR)/References
+FILES_TO_COPY = \
+	$(SRC_DIR)/thesis.tex \
+	$(SRC_DIR)/thesis-info.tex \
+	$(SRC_DIR)/phd-thesis-template/PhDThesisPSnPDF.cls \
+	$(SRC_DIR)/phd-thesis-template/glyphtounicode.tex \
+	$(SRC_DIR)/phd-thesis-template/.travis.yml \
+	$(SRC_DIR)/phd-thesis-template/compile-thesis.sh
 
-# LaTeX compilation command (adjust to your workflow)
-LATEX_CMD = latexmk -xelatex -cd -output-directory=$(BUILD_DIR)
+DIRS_TO_COPY = \
+	$(SRC_DIR)/Figs \
+	$(SRC_DIR)/Body \
+	$(SRC_DIR)/References \
+	$(SRC_DIR)/Extras \
+	$(SRC_DIR)/phd-thesis-template/sty \
+	$(SRC_DIR)/Appendices \
+	$(SRC_DIR)/phd-thesis-template/hooks
 
 # Default target: build the thesis
 all: setup compile
@@ -19,7 +30,7 @@ setup:
 
 # Step 2: Compile in build directory
 compile: setup
-	$(LATEX_CMD) $(BUILD_DIR)/thesis.tex
+	cd $(BUILD_DIR) && latexmk -xelatex thesis.tex
 
 # Clean-up: Remove build directory and all compiled files
 purge:
