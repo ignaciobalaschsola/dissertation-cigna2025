@@ -7,5 +7,5 @@
 *.out
 thesis.pdf
 *.DS_store
-./AnexoB/build
-./Dissertation/build
+/AnexoB/build
+/Dissertation/build
